@@ -1,15 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://caer8xjc2tgsh"]
+[gd_scene load_steps=8 format=3 uid="uid://caer8xjc2tgsh"]
 
 [ext_resource type="Texture2D" uid="uid://b06tw1athei2h" path="res://icon.svg" id="1_2iojy"]
 [ext_resource type="PackedScene" uid="uid://cd08ri4cx1y71" path="res://Scenes/Characters/roger.tscn" id="2_n3u3g"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="3_gi6wt"]
+[ext_resource type="PackedScene" uid="uid://cnfxglaik2m0b" path="res://Scenes/Characters/crabby.tscn" id="4_gos8h"]
+[ext_resource type="PackedScene" uid="uid://bu0crmlktj8hf" path="res://Scenes/Characters/fierce_tooth.tscn" id="5_moi72"]
+[ext_resource type="PackedScene" uid="uid://mcg6cruh6myq" path="res://Scenes/Characters/pink_star.tscn" id="6_sxjh5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_auqni"]
 size = Vector2(128, 127)
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(440, 480)
+zoom = Vector2(3, 3)
+
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = 14.0
 offset_top = -6.0
 offset_right = 105.0
@@ -32,3 +40,12 @@ position = Vector2(427, 549)
 
 [node name="Player" type="Node" parent="Roger"]
 script = ExtResource("3_gi6wt")
+
+[node name="Crabby" parent="." instance=ExtResource("4_gos8h")]
+position = Vector2(564, 550)
+
+[node name="Fierce Tooth" parent="." instance=ExtResource("5_moi72")]
+position = Vector2(339, 545)
+
+[node name="Pink Star" parent="." instance=ExtResource("6_sxjh5")]
+position = Vector2(491, 547)

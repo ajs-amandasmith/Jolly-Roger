@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://mcg6cruh6myq"]
+
+[ext_resource type="Texture2D" uid="uid://b61x74bg03ygv" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 01.png" id="1_4eemu"]
+[ext_resource type="Script" path="res://Scripts/character.gd" id="1_12s76"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n4otk"]
+radius = 6.0
+height = 18.0
+
+[node name="Pink Star" type="CharacterBody2D"]
+script = ExtResource("1_12s76")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -14)
+texture = ExtResource("1_4eemu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9)
+shape = SubResource("CapsuleShape2D_n4otk")

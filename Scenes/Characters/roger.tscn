@@ -1,12 +1,14 @@
-[gd_scene load_steps=26 format=3 uid="uid://cd08ri4cx1y71"]
+[gd_scene load_steps=53 format=3 uid="uid://cd08ri4cx1y71"]
 
 [ext_resource type="Texture2D" uid="uid://bwi7ovdw2dknw" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 01.png" id="1_2dvfk"]
 [ext_resource type="Script" path="res://Scripts/character.gd" id="1_ul28j"]
 [ext_resource type="Texture2D" uid="uid://mwwefshkpkdk" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/04-Fall/Fall 01.png" id="2_1l1tr"]
+[ext_resource type="PackedScene" uid="uid://cxmqy68yx406m" path="res://Scenes/Dust/jump_dust.tscn" id="2_pqmc0"]
 [ext_resource type="Texture2D" uid="uid://bugxeh7jr6brs" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 02.png" id="4_fictl"]
 [ext_resource type="Texture2D" uid="uid://r78tnsqisri0" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 03.png" id="5_6trnd"]
 [ext_resource type="Texture2D" uid="uid://b7r8iqe7pfhkw" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 04.png" id="6_n0e71"]
 [ext_resource type="Texture2D" uid="uid://cjo8imdrmegn5" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 05.png" id="7_a5d82"]
+[ext_resource type="AudioStream" uid="uid://ck53g80bodc7h" path="res://Sound Effects/209133__lukesharples__fall-to-the-floor.wav" id="8_ctpea"]
 [ext_resource type="Texture2D" uid="uid://i0ypf0t1sc5w" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 01.png" id="8_v3p8b"]
 [ext_resource type="Texture2D" uid="uid://cfhr57n0718wt" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 02.png" id="9_50q71"]
 [ext_resource type="Texture2D" uid="uid://gsea3dul4a6b" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 03.png" id="10_kkx6c"]
@@ -14,10 +16,75 @@
 [ext_resource type="Texture2D" uid="uid://cepj0u3wmm0h1" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 05.png" id="12_itmcm"]
 [ext_resource type="Texture2D" uid="uid://6xekyjhq8gt6" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 06.png" id="13_udao3"]
 [ext_resource type="Texture2D" uid="uid://d0aqsdcmimepx" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/03-Jump/Jump 01.png" id="14_6na4n"]
+[ext_resource type="PackedScene" uid="uid://dvi14bwvfahkb" path="res://Scenes/Dust/run_dust.tscn" id="15_6itsb"]
 [ext_resource type="Texture2D" uid="uid://bm8782ve3senq" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/03-Jump/Jump 02.png" id="15_n6foy"]
 [ext_resource type="Texture2D" uid="uid://djqhhqitl16fn" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/03-Jump/Jump 03.png" id="16_yww0l"]
 [ext_resource type="Texture2D" uid="uid://bldi5xrweqvsd" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/05-Ground/Ground 01.png" id="17_hjt0n"]
+[ext_resource type="AudioStream" uid="uid://7iqxoe8tqcpp" path="res://Sound Effects/209171__lukesharples__hagh.wav" id="17_jq0hw"]
 [ext_resource type="Texture2D" uid="uid://4peg51bq2ux6" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/05-Ground/Ground 02.png" id="18_duyal"]
+[ext_resource type="PackedScene" uid="uid://bibdy5b2ciplx" path="res://Scenes/Dust/fall_dust.tscn" id="19_c881a"]
+[ext_resource type="AudioStream" uid="uid://bqndc4omvlnyj" path="res://Sound Effects/209196__lukesharples__shoes1.wav" id="24_vg8x7"]
+
+[sub_resource type="Animation" id="Animation_cjw7h"]
+resource_name = "fall"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_1l1tr")]
+}
+
+[sub_resource type="Animation" id="Animation_ksrcj"]
+resource_name = "ground"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.1001),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("17_hjt0n"), ExtResource("2_1l1tr"), ExtResource("18_duyal")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [ExtResource("19_c881a")],
+"method": &"_spawn_dust"
+}]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.7926,
+"start_offset": 0.0,
+"stream": ExtResource("8_ctpea")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_ndnbg"]
 resource_name = "idle"
@@ -36,6 +103,37 @@ tracks/0/keys = {
 "values": [ExtResource("1_2dvfk"), ExtResource("4_fictl"), ExtResource("5_6trnd"), ExtResource("6_n0e71"), ExtResource("7_a5d82")]
 }
 
+[sub_resource type="Animation" id="Animation_uwoer"]
+resource_name = "jump"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("14_6na4n"), ExtResource("15_n6foy"), ExtResource("16_yww0l")]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AudioStreamPlayer2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("17_jq0hw")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
 [sub_resource type="Animation" id="Animation_squpy"]
 resource_name = "run"
 length = 0.6
@@ -52,57 +150,35 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("8_v3p8b"), ExtResource("9_50q71"), ExtResource("10_kkx6c"), ExtResource("11_n8kl7"), ExtResource("12_itmcm"), ExtResource("13_udao3")]
 }
-
-[sub_resource type="Animation" id="Animation_uwoer"]
-resource_name = "jump"
-length = 0.3
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("14_6na4n"), ExtResource("15_n6foy"), ExtResource("16_yww0l")]
-}
-
-[sub_resource type="Animation" id="Animation_cjw7h"]
-resource_name = "fall"
-length = 0.1
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_1l1tr")]
+"values": [{
+"args": [ExtResource("15_6itsb")],
+"method": &"_spawn_dust"
+}]
 }
-
-[sub_resource type="Animation" id="Animation_ksrcj"]
-resource_name = "ground"
-length = 0.2
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.1001),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("17_hjt0n"), ExtResource("2_1l1tr"), ExtResource("18_duyal")]
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 17.9432,
+"start_offset": 0.4331,
+"stream": ExtResource("24_vg8x7")
+}],
+"times": PackedFloat32Array(0)
 }
+tracks/2/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_740hi"]
 _data = {
@@ -113,24 +189,122 @@ _data = {
 "run": SubResource("Animation_squpy")
 }
 
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_71c24"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3w7e3"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4iuyi"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ihuh5"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rgg2l"]
+advance_mode = 2
+advance_expression = "velocity.x != 0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lq4bd"]
+priority = 0
+advance_mode = 2
+advance_expression = "velocity.x == 0"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_py80l"]
+states/idle/node = SubResource("AnimationNodeAnimation_3w7e3")
+states/idle/position = Vector2(395, 100)
+states/run/node = SubResource("AnimationNodeAnimation_4iuyi")
+states/run/position = Vector2(668, 100)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_ihuh5"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_rgg2l"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_lq4bd")]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0lkw4"]
+animation = &"fall"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y6ohc"]
+animation = &"ground"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mabh8"]
+animation = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5dhy4"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ykdkg"]
+priority = 0
+advance_mode = 2
+advance_expression = "velocity.y < 0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y7cyh"]
+advance_mode = 2
+advance_expression = "velocity.y >= 0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_060l0"]
+advance_mode = 2
+advance_expression = "is_on_floor()"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1xl4q"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_28cbd"]
+advance_mode = 2
+advance_expression = "not is_on_floor()"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_s64o7"]
+states/Locomotion/node = SubResource("AnimationNodeStateMachine_py80l")
+states/Locomotion/position = Vector2(620, 100)
+states/fall/node = SubResource("AnimationNodeAnimation_0lkw4")
+states/fall/position = Vector2(620, -105)
+states/ground/node = SubResource("AnimationNodeAnimation_y6ohc")
+states/ground/position = Vector2(755, -20)
+states/jump/node = SubResource("AnimationNodeAnimation_mabh8")
+states/jump/position = Vector2(496, -20)
+transitions = ["Start", "Locomotion", SubResource("AnimationNodeStateMachineTransition_5dhy4"), "Locomotion", "jump", SubResource("AnimationNodeStateMachineTransition_ykdkg"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_y7cyh"), "fall", "ground", SubResource("AnimationNodeStateMachineTransition_060l0"), "ground", "Locomotion", SubResource("AnimationNodeStateMachineTransition_1xl4q"), "Locomotion", "fall", SubResource("AnimationNodeStateMachineTransition_28cbd")]
+graph_offset = Vector2(-135, -143.28)
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rq30c"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_15hn3"]
+states/Movement/node = SubResource("AnimationNodeStateMachine_s64o7")
+states/Movement/position = Vector2(411, 102)
+transitions = ["Start", "Movement", SubResource("AnimationNodeStateMachineTransition_rq30c")]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jw0em"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4sgcw"]
+"states/With Sword/node" = SubResource("AnimationNodeStateMachine_71c24")
+"states/With Sword/position" = Vector2(689, 100)
+"states/Without Sword/node" = SubResource("AnimationNodeStateMachine_15hn3")
+"states/Without Sword/position" = Vector2(392, 100)
+transitions = ["Start", "Without Sword", SubResource("AnimationNodeStateMachineTransition_jw0em")]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dwes3"]
 radius = 8.0
 height = 26.0
 
 [node name="Roger" type="CharacterBody2D"]
+up_direction = Vector2(2.54792e-12, -1)
 script = ExtResource("1_ul28j")
-_acceleration = 600.0
-_deceleration = 1200.0
+_jump_dust = ExtResource("2_pqmc0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -12)
-texture = ExtResource("2_1l1tr")
+texture = ExtResource("14_6na4n")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {
 "": SubResource("AnimationLibrary_740hi")
 }
 
+[node name="AnimationTree" type="AnimationTree" parent="Sprite2D/AnimationPlayer"]
+root_node = NodePath("../..")
+tree_root = SubResource("AnimationNodeStateMachine_4sgcw")
+advance_expression_base_node = NodePath("../../..")
+anim_player = NodePath("..")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -13)
 shape = SubResource("CapsuleShape2D_dwes3")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

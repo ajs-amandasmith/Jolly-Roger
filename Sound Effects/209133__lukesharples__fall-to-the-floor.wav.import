@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ck53g80bodc7h"
+path="res://.godot/imported/209133__lukesharples__fall-to-the-floor.wav-a09b38c65248690a4c31e99b54be750a.sample"
+
+[deps]
+
+source_file="res://Sound Effects/209133__lukesharples__fall-to-the-floor.wav"
+dest_files=["res://.godot/imported/209133__lukesharples__fall-to-the-floor.wav-a09b38c65248690a4c31e99b54be750a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

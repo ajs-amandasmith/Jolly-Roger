@@ -1,7 +1,118 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnfxglaik2m0b"]
+[gd_scene load_steps=30 format=3 uid="uid://cnfxglaik2m0b"]
 
 [ext_resource type="Script" path="res://Scripts/character.gd" id="1_3dobw"]
 [ext_resource type="Texture2D" uid="uid://bdqru2ih800b" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 01.png" id="1_hk4wm"]
+[ext_resource type="Texture2D" uid="uid://guswqmulh67d" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/05-Ground/Ground 02.png" id="2_ooswj"]
+[ext_resource type="Texture2D" uid="uid://dxsc6jv5rqi5n" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 02.png" id="4_ltwx4"]
+[ext_resource type="Texture2D" uid="uid://0vllvrf28kr7" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 03.png" id="5_yd8uv"]
+[ext_resource type="Texture2D" uid="uid://cxi6kd3m826p" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 04.png" id="6_rb27k"]
+[ext_resource type="Texture2D" uid="uid://sufxqrunx2ep" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 05.png" id="7_dpb7c"]
+[ext_resource type="Texture2D" uid="uid://d352cw1i2utxp" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 06.png" id="8_s33wo"]
+[ext_resource type="Texture2D" uid="uid://chwt2lqddiior" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 07.png" id="9_u1lcy"]
+[ext_resource type="Texture2D" uid="uid://bsrclv188quf6" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 08.png" id="10_ns1bx"]
+[ext_resource type="Texture2D" uid="uid://dr32scyrt3sis" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 09.png" id="11_mcm82"]
+[ext_resource type="Texture2D" uid="uid://bd8cpqasmi35h" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/02-Run/Run 01.png" id="12_bhc6k"]
+[ext_resource type="Texture2D" uid="uid://dmqiu1pn1j765" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/02-Run/Run 02.png" id="13_0v7rm"]
+[ext_resource type="Texture2D" uid="uid://cqippevp082rt" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/02-Run/Run 03.png" id="14_2d6uo"]
+[ext_resource type="Texture2D" uid="uid://c4cqqtm0vw5u5" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/02-Run/Run 04.png" id="15_rmyck"]
+[ext_resource type="Texture2D" uid="uid://bnbit76yxt6j3" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/02-Run/Run 05.png" id="16_pxa4m"]
+[ext_resource type="Texture2D" uid="uid://b1su4yl1024d4" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/02-Run/Run 06.png" id="17_fmgky"]
+[ext_resource type="Texture2D" uid="uid://b70c8l0v8ohuq" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/03-Jump/Jump 01.png" id="18_4kdd8"]
+[ext_resource type="Texture2D" uid="uid://drxlb2cqwukw5" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/03-Jump/Jump 02.png" id="19_djgkk"]
+[ext_resource type="Texture2D" uid="uid://c30ru4hrrrn62" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/03-Jump/Jump 03.png" id="20_vrlk2"]
+[ext_resource type="Texture2D" uid="uid://bg0go8chq3d0g" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/04-Fall/Fall 01.png" id="21_x00l0"]
+[ext_resource type="Texture2D" uid="uid://co6otl2k3ed34" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/05-Ground/Ground 01.png" id="22_n2ehq"]
+
+[sub_resource type="Animation" id="Animation_rg7bc"]
+resource_name = "idle"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.1001, 0.2, 0.3, 0.3001, 0.4, 0.4001, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_hk4wm"), ExtResource("1_hk4wm"), ExtResource("4_ltwx4"), ExtResource("5_yd8uv"), ExtResource("1_hk4wm"), ExtResource("6_rb27k"), ExtResource("1_hk4wm"), ExtResource("7_dpb7c"), ExtResource("8_s33wo"), ExtResource("9_u1lcy"), ExtResource("10_ns1bx"), ExtResource("11_mcm82")]
+}
+
+[sub_resource type="Animation" id="Animation_rvlwv"]
+resource_name = "run"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.1001, 0.2, 0.3, 0.3001, 0.4, 0.4001, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("12_bhc6k"), ExtResource("1_hk4wm"), ExtResource("13_0v7rm"), ExtResource("14_2d6uo"), ExtResource("1_hk4wm"), ExtResource("15_rmyck"), ExtResource("1_hk4wm"), ExtResource("16_pxa4m"), ExtResource("17_fmgky")]
+}
+
+[sub_resource type="Animation" id="Animation_cffug"]
+resource_name = "jump"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("18_4kdd8"), ExtResource("19_djgkk"), ExtResource("20_vrlk2")]
+}
+
+[sub_resource type="Animation" id="Animation_l37p8"]
+resource_name = "fall"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("21_x00l0")]
+}
+
+[sub_resource type="Animation" id="Animation_vkytf"]
+resource_name = "ground"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("22_n2ehq"), ExtResource("2_ooswj")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jy0td"]
+_data = {
+"fall": SubResource("Animation_l37p8"),
+"ground": SubResource("Animation_vkytf"),
+"idle": SubResource("Animation_rg7bc"),
+"jump": SubResource("Animation_cffug"),
+"run": SubResource("Animation_rvlwv")
+}
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_80y31"]
 radius = 8.0
@@ -9,10 +120,16 @@ height = 16.0
 
 [node name="Crabby" type="CharacterBody2D"]
 script = ExtResource("1_3dobw")
+_sprites_face_left = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -13)
-texture = ExtResource("1_hk4wm")
+texture = ExtResource("2_ooswj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_jy0td")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)

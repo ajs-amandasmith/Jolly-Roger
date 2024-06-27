@@ -11,6 +11,9 @@ extends CharacterBody2D
 @export var _jump_dust : PackedScene
 var _jump_velocity : float
 
+@export_category("Sprite")
+@export var _sprites_face_left : bool
+
 @onready var _sprite : Sprite2D = $Sprite2D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -29,9 +32,11 @@ func _ready():
 
 func face_left():
 	_sprite.flip_h = true
+	_sprite.flip_h = not _sprites_face_left
 	
 func face_right():
 	_sprite.flip_h = false
+	_sprite.flip_h = _sprites_face_left
 	
 func run(direction : float):
 	_direction = direction

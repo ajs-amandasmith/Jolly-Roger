@@ -1,12 +1,14 @@
-[gd_scene load_steps=29 format=3 uid="uid://mcg6cruh6myq"]
+[gd_scene load_steps=52 format=3 uid="uid://mcg6cruh6myq"]
 
 [ext_resource type="Texture2D" uid="uid://b61x74bg03ygv" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 01.png" id="1_4eemu"]
 [ext_resource type="Script" path="res://Scripts/character.gd" id="1_12s76"]
 [ext_resource type="Texture2D" uid="uid://d0ggkuf2w1jhx" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/05-Ground/Ground 02.png" id="2_hak7d"]
+[ext_resource type="PackedScene" uid="uid://dlon70k53wjd8" path="res://Scenes/Dust/crew_jump_dust.tscn" id="2_k14n4"]
 [ext_resource type="Texture2D" uid="uid://cnwy4g8ew02b6" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 02.png" id="4_lkvro"]
 [ext_resource type="Texture2D" uid="uid://bwcsxyhxpwn7o" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 03.png" id="5_7jt7w"]
 [ext_resource type="Texture2D" uid="uid://d1yur687nyw13" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 04.png" id="6_4kdm7"]
 [ext_resource type="Texture2D" uid="uid://bimut5luy22xy" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 05.png" id="7_vsi21"]
+[ext_resource type="PackedScene" uid="uid://d2msoe01gicsk" path="res://Scenes/Dust/crew_fall_dust.tscn" id="7_w4bxb"]
 [ext_resource type="Texture2D" uid="uid://ccuxu5nqeoc7k" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 06.png" id="8_imno1"]
 [ext_resource type="Texture2D" uid="uid://8rm5bcpytjsd" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 07.png" id="9_nv6fl"]
 [ext_resource type="Texture2D" uid="uid://ckb6uqxqtr8nx" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 08.png" id="10_a52o5"]
@@ -21,56 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://qcdgsvu3f7gw" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/03-Jump/Jump 03.png" id="19_plsra"]
 [ext_resource type="Texture2D" uid="uid://3nxb6w0jso3n" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/04-Fall/Fall 01.png" id="20_x16rw"]
 [ext_resource type="Texture2D" uid="uid://drt8g0psf7c1a" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/05-Ground/Ground 01.png" id="21_ntu41"]
-
-[sub_resource type="Animation" id="Animation_3634p"]
-resource_name = "idle"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.4001, 0.5, 0.6, 0.6001, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("1_4eemu"), ExtResource("4_lkvro"), ExtResource("5_7jt7w"), ExtResource("6_4kdm7"), ExtResource("1_4eemu"), ExtResource("7_vsi21"), ExtResource("8_imno1"), ExtResource("1_4eemu"), ExtResource("9_nv6fl"), ExtResource("10_a52o5")]
-}
-
-[sub_resource type="Animation" id="Animation_dthjo"]
-resource_name = "run"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.4001, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("11_n3qey"), ExtResource("12_2xdaq"), ExtResource("13_gqfhg"), ExtResource("14_0ic4n"), ExtResource("1_4eemu"), ExtResource("15_i7sox"), ExtResource("16_ontpy")]
-}
-
-[sub_resource type="Animation" id="Animation_qibnh"]
-resource_name = "jump"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("17_vkpqv"), ExtResource("18_86m5k"), ExtResource("19_plsra")]
-}
+[ext_resource type="PackedScene" uid="uid://tqvb325gfv7u" path="res://Scenes/Dust/crew_run_dust.tscn" id="24_fkk0x"]
 
 [sub_resource type="Animation" id="Animation_4f28e"]
 resource_name = "fall"
@@ -103,6 +56,84 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("21_ntu41"), ExtResource("2_hak7d")]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [ExtResource("7_w4bxb")],
+"method": &"_spawn_dust"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_3634p"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.4001, 0.5, 0.6, 0.6001, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_4eemu"), ExtResource("4_lkvro"), ExtResource("5_7jt7w"), ExtResource("6_4kdm7"), ExtResource("1_4eemu"), ExtResource("7_vsi21"), ExtResource("8_imno1"), ExtResource("1_4eemu"), ExtResource("9_nv6fl"), ExtResource("10_a52o5")]
+}
+
+[sub_resource type="Animation" id="Animation_qibnh"]
+resource_name = "jump"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("17_vkpqv"), ExtResource("18_86m5k"), ExtResource("19_plsra")]
+}
+
+[sub_resource type="Animation" id="Animation_dthjo"]
+resource_name = "run"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.4001, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("11_n3qey"), ExtResource("12_2xdaq"), ExtResource("13_gqfhg"), ExtResource("14_0ic4n"), ExtResource("1_4eemu"), ExtResource("15_i7sox"), ExtResource("16_ontpy")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [ExtResource("24_fkk0x")],
+"method": &"_spawn_dust"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dqj8x"]
 _data = {
@@ -113,22 +144,114 @@ _data = {
 "run": SubResource("Animation_dthjo")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6p37p"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ytaaj"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_52jmi"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cbh0v"]
+advance_mode = 2
+advance_expression = "velocity.x != 0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_67h1p"]
+advance_mode = 2
+advance_expression = "velocity.x == 0"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_a45q5"]
+states/idle/node = SubResource("AnimationNodeAnimation_6p37p")
+states/idle/position = Vector2(455, 100)
+states/run/node = SubResource("AnimationNodeAnimation_ytaaj")
+states/run/position = Vector2(639, 100)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_52jmi"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_cbh0v"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_67h1p")]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_q3n71"]
+animation = &"fall"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fts8a"]
+animation = &"ground"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r20nv"]
+animation = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_r8d76"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hcdio"]
+priority = 0
+advance_mode = 2
+advance_expression = "velocity.y < 0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_devgt"]
+advance_mode = 2
+advance_expression = "velocity.y >= 0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fs8dk"]
+advance_mode = 2
+advance_expression = "is_on_floor()"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_em42d"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fietg"]
+advance_mode = 2
+advance_expression = "not is_on_floor()"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_d63ur"]
+states/Locomotion/node = SubResource("AnimationNodeStateMachine_a45q5")
+states/Locomotion/position = Vector2(587, 100)
+states/fall/node = SubResource("AnimationNodeAnimation_q3n71")
+states/fall/position = Vector2(587, -73)
+states/ground/node = SubResource("AnimationNodeAnimation_fts8a")
+states/ground/position = Vector2(713, -4)
+states/jump/node = SubResource("AnimationNodeAnimation_r20nv")
+states/jump/position = Vector2(463, -4)
+transitions = ["Start", "Locomotion", SubResource("AnimationNodeStateMachineTransition_r8d76"), "Locomotion", "jump", SubResource("AnimationNodeStateMachineTransition_hcdio"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_devgt"), "fall", "ground", SubResource("AnimationNodeStateMachineTransition_fs8dk"), "ground", "Locomotion", SubResource("AnimationNodeStateMachineTransition_em42d"), "Locomotion", "fall", SubResource("AnimationNodeStateMachineTransition_fietg")]
+graph_offset = Vector2(-163, -120)
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_veqx8"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_dadck"]
+states/Movement/node = SubResource("AnimationNodeStateMachine_d63ur")
+states/Movement/position = Vector2(537, 100)
+transitions = ["Start", "Movement", SubResource("AnimationNodeStateMachineTransition_veqx8")]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qtanb"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_sgyhu"]
+states/Attack/node = SubResource("AnimationNodeStateMachine_dadck")
+states/Attack/position = Vector2(462, 100)
+transitions = ["Start", "Attack", SubResource("AnimationNodeStateMachineTransition_qtanb")]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n4otk"]
 radius = 6.0
 height = 18.0
 
 [node name="Pink Star" type="CharacterBody2D"]
 script = ExtResource("1_12s76")
+_jump_dust = ExtResource("2_k14n4")
 _sprites_face_left = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -14)
-texture = ExtResource("2_hak7d")
+texture = ExtResource("11_n3qey")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {
 "": SubResource("AnimationLibrary_dqj8x")
 }
+
+[node name="AnimationTree" type="AnimationTree" parent="Sprite2D/AnimationPlayer"]
+root_node = NodePath("../..")
+tree_root = SubResource("AnimationNodeStateMachine_sgyhu")
+advance_expression_base_node = NodePath("../../..")
+anim_player = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -9)

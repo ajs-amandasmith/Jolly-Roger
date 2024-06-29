@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://d2msoe01gicsk"]
+
+[ext_resource type="Texture2D" uid="uid://cjfdgajrg20ex" path="res://Treasure Hunters/The Crusty Crew/Sprites/Dust Particles/Fall 01.png" id="1_scjrp"]
+[ext_resource type="Texture2D" uid="uid://868y3djjfq7s" path="res://Treasure Hunters/The Crusty Crew/Sprites/Dust Particles/Fall 02.png" id="2_fq7od"]
+[ext_resource type="Texture2D" uid="uid://xxs6oy076bjj" path="res://Treasure Hunters/The Crusty Crew/Sprites/Dust Particles/Fall 03.png" id="3_a61l1"]
+[ext_resource type="Texture2D" uid="uid://c43e2onkuevct" path="res://Treasure Hunters/The Crusty Crew/Sprites/Dust Particles/Fall 04.png" id="4_75108"]
+[ext_resource type="Texture2D" uid="uid://dkclqcggwf721" path="res://Treasure Hunters/The Crusty Crew/Sprites/Dust Particles/Fall 05.png" id="5_srnd8"]
+[ext_resource type="Script" path="res://Scripts/dust.gd" id="7_0c0wm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_esxmq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_scjrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fq7od")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a61l1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_75108")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_srnd8")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Dust Particles" type="AnimatedSprite2D"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+sprite_frames = SubResource("SpriteFrames_esxmq")
+frame = 4
+frame_progress = 1.0
+offset = Vector2(2.08165e-12, -10)
+script = ExtResource("7_0c0wm")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

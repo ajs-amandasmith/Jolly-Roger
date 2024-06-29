@@ -78,7 +78,7 @@ func _air_physics(delta : float):
 	velocity.y += gravity * delta
 	if _direction:
 		velocity.x = move_toward(velocity.x, _direction * _speed, _acceleration * _air_control * delta)
-
+#
 func _spawn_dust(dust : PackedScene):
 	var _dust = dust.instantiate()
 	_dust.position = position

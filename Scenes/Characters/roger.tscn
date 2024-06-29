@@ -232,7 +232,7 @@ transitions = ["Start", "Without Sword", SubResource("AnimationNodeStateMachineT
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dwes3"]
 radius = 8.0
-height = 26.0
+height = 24.0
 
 [node name="Roger" type="CharacterBody2D"]
 up_direction = Vector2(2.54792e-12, -1)
@@ -241,7 +241,7 @@ _jump_dust = ExtResource("2_pqmc0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -12)
-texture = ExtResource("13_udao3")
+texture = ExtResource("8_v3p8b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {

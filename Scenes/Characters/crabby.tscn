@@ -255,7 +255,7 @@ advance_expression_base_node = NodePath("../../..")
 anim_player = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -8)
+position = Vector2(0, -9)
 shape = SubResource("CapsuleShape2D_80y31")
 
 [connection signal="ready" from="." to="." method="_on_ready"]

@@ -1,26 +1,23 @@
-[gd_scene load_steps=24 format=3 uid="uid://caer8xjc2tgsh"]
+[gd_scene load_steps=22 format=3 uid="uid://dnumndk6na2k5"]
 
-[ext_resource type="Script" path="res://Scripts/camera.gd" id="2_qrcjy"]
-[ext_resource type="PackedScene" uid="uid://v6r3034osx6h" path="res://Scenes/background.tscn" id="3_fb2oe"]
-[ext_resource type="Script" path="res://Scripts/player.gd" id="3_gi6wt"]
-[ext_resource type="PackedScene" uid="uid://cnfxglaik2m0b" path="res://Scenes/Characters/crabby.tscn" id="4_gos8h"]
-[ext_resource type="PackedScene" uid="uid://bu0crmlktj8hf" path="res://Scenes/Characters/fierce_tooth.tscn" id="5_moi72"]
-[ext_resource type="PackedScene" uid="uid://mcg6cruh6myq" path="res://Scenes/Characters/pink_star.tscn" id="6_sxjh5"]
-[ext_resource type="Script" path="res://Scripts/AI.gd" id="7_q7fma"]
-[ext_resource type="Texture2D" uid="uid://dml5ei1qfj4gd" path="res://Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="8_wsphv"]
-[ext_resource type="Texture2D" uid="uid://txhj6qa78bbt" path="res://Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Bottom and Grass (32x32).png" id="9_citwy"]
-[ext_resource type="PackedScene" uid="uid://cyio6xvwsc8p" path="res://Scenes/Decorations/palm_tree.tscn" id="10_hblf4"]
-[ext_resource type="PackedScene" uid="uid://ddfnpefpciqr1" path="res://Scenes/Characters/roger2.tscn" id="10_t6dmd"]
-[ext_resource type="Texture2D" uid="uid://bbm8ksekot1s6" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Bottom/1.png" id="13_p0y8c"]
-[ext_resource type="Script" path="res://Scripts/water.gd" id="13_t4ek4"]
-[ext_resource type="Texture2D" uid="uid://wgrav2mvihvl" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/1.png" id="13_u5of3"]
-[ext_resource type="Texture2D" uid="uid://mdqj3be6lw7w" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/2.png" id="14_b74dd"]
-[ext_resource type="PackedScene" uid="uid://uowy6xc64cqm" path="res://Scenes/Dust/splash.tscn" id="14_dll5a"]
-[ext_resource type="Texture2D" uid="uid://cx4yjhat5kgu6" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/3.png" id="15_0m8ai"]
-[ext_resource type="Texture2D" uid="uid://cm1e5gculmiyl" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/4.png" id="16_ejqaq"]
+[ext_resource type="Texture2D" uid="uid://dml5ei1qfj4gd" path="res://Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_3k3bg"]
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_x1hqa"]
+[ext_resource type="Texture2D" uid="uid://txhj6qa78bbt" path="res://Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Bottom and Grass (32x32).png" id="2_0pysg"]
+[ext_resource type="Script" path="res://Scripts/water.gd" id="3_tf72e"]
+[ext_resource type="PackedScene" uid="uid://uowy6xc64cqm" path="res://Scenes/Dust/splash.tscn" id="4_6057x"]
+[ext_resource type="Texture2D" uid="uid://wgrav2mvihvl" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/1.png" id="5_xfetu"]
+[ext_resource type="Texture2D" uid="uid://mdqj3be6lw7w" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/2.png" id="6_fh7gs"]
+[ext_resource type="Texture2D" uid="uid://cx4yjhat5kgu6" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/3.png" id="7_w0trg"]
+[ext_resource type="Texture2D" uid="uid://cm1e5gculmiyl" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/4.png" id="8_h726u"]
+[ext_resource type="Texture2D" uid="uid://bbm8ksekot1s6" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Bottom/1.png" id="9_51hae"]
+[ext_resource type="PackedScene" uid="uid://cyio6xvwsc8p" path="res://Scenes/Decorations/palm_tree.tscn" id="10_pcust"]
+[ext_resource type="PackedScene" uid="uid://cnfxglaik2m0b" path="res://Scenes/Characters/crabby.tscn" id="11_3c8gc"]
+[ext_resource type="PackedScene" uid="uid://bu0crmlktj8hf" path="res://Scenes/Characters/fierce_tooth.tscn" id="12_npqvf"]
+[ext_resource type="Script" path="res://Scripts/AI.gd" id="13_2m8if"]
+[ext_resource type="PackedScene" uid="uid://mcg6cruh6myq" path="res://Scenes/Characters/pink_star.tscn" id="14_x723h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4xrv8"]
-texture = ExtResource("8_wsphv")
+texture = ExtResource("1_3k3bg")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 1:0/0/terrain_set = 0
@@ -494,7 +491,7 @@ texture_region_size = Vector2i(32, 32)
 0:0/0/terrains_peering_bit/bottom_side = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4sdfe"]
-texture = ExtResource("9_citwy")
+texture = ExtResource("2_0pysg")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -541,50 +538,30 @@ b = Vector2(1153, 2.08165e-12)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("13_u5of3")
+"texture": ExtResource("5_xfetu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_b74dd")
+"texture": ExtResource("6_fh7gs")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_0m8ai")
+"texture": ExtResource("7_w0trg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_ejqaq")
+"texture": ExtResource("8_h726u")
 }],
 "loop": true,
 "name": &"default",
 "speed": 10.0
 }]
 
-[node name="Node2D" type="Node2D"]
-position = Vector2(0, -1)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vyaq8"]
+size = Vector2(1006, 412)
 
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("_subject")]
-position = Vector2(312, -184)
-offset = Vector2(2.08165e-12, 2.08165e-12)
-zoom = Vector2(2.5, 2.5)
-script = ExtResource("2_qrcjy")
-_subject = NodePath("../Roger2")
-_offset = Vector2(2.5, 2.08165e-12)
-_look_ahead_trans_type = 1
-_look_ahead_ease_type = 2
-_look_ahead_duration = 2.0
-_floor_height_trans_type = 1
-_floor_height_ease_type = 1
-
-[node name="Background" parent="Camera2D" instance=ExtResource("3_fb2oe")]
-position = Vector2(-80, -2)
-
-[node name="Roger2" parent="." instance=ExtResource("10_t6dmd")]
-
-[node name="Player" type="Node" parent="Roger2"]
-script = ExtResource("3_gi6wt")
-
-[node name="Level" type="Area2D" parent="."]
+[node name="Level" type="Area2D"]
 position = Vector2(-1, 0)
+script = ExtResource("1_x1hqa")
 
-[node name="TileMap" type="TileMap" parent="Level"]
+[node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-135, -569)
 tile_set = SubResource("TileSet_504hj")
 format = 2
@@ -594,20 +571,20 @@ layer_1/name = "Roots"
 layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(851987, 1, 0, 917523, 1, 1, 786453, 65537, 0, 786454, 131073, 0)
 
-[node name="Water" type="Area2D" parent="Level"]
+[node name="Water" type="Area2D" parent="."]
 z_index = 10
 position = Vector2(-142, -578)
-script = ExtResource("13_t4ek4")
-_splash = ExtResource("14_dll5a")
+script = ExtResource("3_tf72e")
+_splash = ExtResource("4_6057x")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Water"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
 position = Vector2(-2, 613)
 shape = SubResource("SegmentShape2D_ee5vr")
 
-[node name="Surface" type="Node2D" parent="Level/Water"]
+[node name="Surface" type="Node2D" parent="Water"]
 position = Vector2(-2, 613)
 
-[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="Level/Water/Surface"]
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="Water/Surface"]
 position = Vector2(864, 0)
 sprite_frames = SubResource("SpriteFrames_gjqan")
 autoplay = "default"
@@ -615,7 +592,7 @@ frame = 1
 frame_progress = 0.402977
 offset = Vector2(48, 8)
 
-[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="Level/Water/Surface"]
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="Water/Surface"]
 position = Vector2(768, 0)
 sprite_frames = SubResource("SpriteFrames_gjqan")
 autoplay = "default"
@@ -623,7 +600,7 @@ frame = 1
 frame_progress = 0.402977
 offset = Vector2(48, 8)
 
-[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="Level/Water/Surface"]
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="Water/Surface"]
 position = Vector2(576, 0)
 sprite_frames = SubResource("SpriteFrames_gjqan")
 autoplay = "default"
@@ -631,14 +608,14 @@ frame = 1
 frame_progress = 0.402977
 offset = Vector2(48, 8)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Level/Water/Surface"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Water/Surface"]
 sprite_frames = SubResource("SpriteFrames_gjqan")
 autoplay = "default"
 frame = 1
 frame_progress = 0.402977
 offset = Vector2(48, 8)
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Level/Water/Surface"]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Water/Surface"]
 position = Vector2(96, 0)
 sprite_frames = SubResource("SpriteFrames_gjqan")
 autoplay = "default"
@@ -646,7 +623,7 @@ frame = 1
 frame_progress = 0.402977
 offset = Vector2(48, 8)
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Level/Water/Surface"]
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Water/Surface"]
 position = Vector2(192, 0)
 sprite_frames = SubResource("SpriteFrames_gjqan")
 autoplay = "default"
@@ -654,7 +631,7 @@ frame = 1
 frame_progress = 0.402977
 offset = Vector2(48, 8)
 
-[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Level/Water/Surface"]
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Water/Surface"]
 position = Vector2(288, 0)
 sprite_frames = SubResource("SpriteFrames_gjqan")
 autoplay = "default"
@@ -662,7 +639,7 @@ frame = 1
 frame_progress = 0.402977
 offset = Vector2(48, 8)
 
-[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Level/Water/Surface"]
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Water/Surface"]
 position = Vector2(384, 0)
 sprite_frames = SubResource("SpriteFrames_gjqan")
 autoplay = "default"
@@ -670,7 +647,7 @@ frame = 1
 frame_progress = 0.402977
 offset = Vector2(48, 8)
 
-[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="Level/Water/Surface"]
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="Water/Surface"]
 position = Vector2(480, 0)
 sprite_frames = SubResource("SpriteFrames_gjqan")
 autoplay = "default"
@@ -678,7 +655,7 @@ frame = 1
 frame_progress = 0.402977
 offset = Vector2(48, 8)
 
-[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="Level/Water/Surface"]
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="Water/Surface"]
 position = Vector2(672, 0)
 sprite_frames = SubResource("SpriteFrames_gjqan")
 autoplay = "default"
@@ -686,7 +663,7 @@ frame = 1
 frame_progress = 0.402977
 offset = Vector2(48, 8)
 
-[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="Level/Water/Surface"]
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="Water/Surface"]
 position = Vector2(960, 0)
 sprite_frames = SubResource("SpriteFrames_gjqan")
 autoplay = "default"
@@ -694,7 +671,7 @@ frame = 1
 frame_progress = 0.402977
 offset = Vector2(48, 8)
 
-[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="Level/Water/Surface"]
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="Water/Surface"]
 position = Vector2(1056, 0)
 sprite_frames = SubResource("SpriteFrames_gjqan")
 autoplay = "default"
@@ -702,44 +679,47 @@ frame = 1
 frame_progress = 0.402977
 offset = Vector2(48, 8)
 
-[node name="Bottom" type="Sprite2D" parent="Level/Water"]
+[node name="Bottom" type="Sprite2D" parent="Water"]
 position = Vector2(574, 653)
 scale = Vector2(12, 1)
-texture = ExtResource("13_p0y8c")
+texture = ExtResource("9_51hae")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Level/Water"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Water"]
 
-[node name="Decorations" type="Node2D" parent="Level"]
+[node name="Decorations" type="Node2D" parent="."]
 position = Vector2(-134, -569)
 
-[node name="Palm Tree" parent="Level/Decorations" instance=ExtResource("10_hblf4")]
+[node name="Palm Tree" parent="Decorations" instance=ExtResource("10_pcust")]
 position = Vector2(608, 384)
 
-[node name="Palm Tree2" parent="Level/Decorations" instance=ExtResource("10_hblf4")]
+[node name="Palm Tree2" parent="Decorations" instance=ExtResource("10_pcust")]
 position = Vector2(672, 352)
 
-[node name="Enemies" type="Node2D" parent="Level"]
+[node name="Enemies" type="Node2D" parent="."]
 position = Vector2(-170, -546)
 
-[node name="Crabby" parent="Level/Enemies" instance=ExtResource("4_gos8h")]
+[node name="Crabby" parent="Enemies" instance=ExtResource("11_3c8gc")]
 position = Vector2(512, 448)
 _is_facing_left = true
 _sprites_face_left = false
 
-[node name="Fierce Tooth" parent="Level/Enemies" instance=ExtResource("5_moi72")]
+[node name="Fierce Tooth" parent="Enemies" instance=ExtResource("12_npqvf")]
 position = Vector2(339, 545)
 _is_facing_left = true
 _sprites_face_left = false
 
-[node name="AI" type="Node" parent="Level/Enemies/Fierce Tooth"]
-script = ExtResource("7_q7fma")
+[node name="AI" type="Node" parent="Enemies/Fierce Tooth"]
+script = ExtResource("13_2m8if")
 
-[node name="Pink Star" parent="Level/Enemies" instance=ExtResource("6_sxjh5")]
+[node name="Pink Star" parent="Enemies" instance=ExtResource("14_x723h")]
 position = Vector2(491, 547)
 _is_facing_left = true
 _sprites_face_left = false
 
-[connection signal="changed_direction" from="Roger2" to="Camera2D" method="_on_subject_changed_direction"]
-[connection signal="landed" from="Roger2" to="Camera2D" method="_on_subject_landed"]
-[connection signal="body_entered" from="Level/Water" to="Level/Water" method="_on_body_entered"]
-[connection signal="body_exited" from="Level/Water" to="Level/Water" method="_on_body_exited"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(363, -118)
+shape = SubResource("RectangleShape2D_vyaq8")
+debug_color = Color(0, 0.6, 0.701961, 0.0823529)
+
+[connection signal="body_entered" from="Water" to="Water" method="_on_body_entered"]
+[connection signal="body_exited" from="Water" to="Water" method="_on_body_exited"]

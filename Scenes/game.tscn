@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://caer8xjc2tgsh"]
+[gd_scene load_steps=8 format=3 uid="uid://caer8xjc2tgsh"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_klu6w"]
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="2_0wjq4"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ddfnpefpciqr1" path="res://Scenes/Characters/roger2.tscn" id="4_n3eq2"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="5_ojfpc"]
 [ext_resource type="PackedScene" uid="uid://dnumndk6na2k5" path="res://Scenes/Levels/level_1-1.tscn" id="6_pymoc"]
+[ext_resource type="PackedScene" uid="uid://8jhxqisqjwb8" path="res://Scenes/Levels/level_1-2.tscn" id="7_oi36f"]
 
 [node name="Game" type="Node2D"]
 position = Vector2(0, -1)
@@ -25,16 +26,19 @@ _floor_height_trans_type = 1
 _floor_height_ease_type = 1
 
 [node name="Background" parent="Camera2D" instance=ExtResource("3_kys72")]
-position = Vector2(-80, -2)
+position = Vector2(-75, 2)
 
 [node name="Roger2" parent="." instance=ExtResource("4_n3eq2")]
-position = Vector2(-2, -17)
+position = Vector2(24, -24)
 
 [node name="Player" type="Node" parent="Roger2"]
 script = ExtResource("5_ojfpc")
 
 [node name="Level" parent="." instance=ExtResource("6_pymoc")]
-position = Vector2(-5, -2)
+position = Vector2(0, 2)
+
+[node name="Level3" parent="." instance=ExtResource("7_oi36f")]
+position = Vector2(-1701, 591)
 
 [connection signal="changed_direction" from="Roger2" to="Camera2D" method="_on_subject_changed_direction"]
 [connection signal="landed" from="Roger2" to="Camera2D" method="_on_subject_landed"]

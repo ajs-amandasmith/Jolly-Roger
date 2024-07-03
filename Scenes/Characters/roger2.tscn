@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://ddfnpefpciqr1"]
+[gd_scene load_steps=52 format=3 uid="uid://ddfnpefpciqr1"]
 
 [ext_resource type="Script" path="res://Scripts/character.gd" id="1_yscsi"]
 [ext_resource type="PackedScene" uid="uid://cxmqy68yx406m" path="res://Scenes/Dust/jump_dust.tscn" id="2_0o1e0"]
@@ -22,6 +22,21 @@
 [ext_resource type="Texture2D" uid="uid://gsea3dul4a6b" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 03.png" id="19_i3x8n"]
 [ext_resource type="Texture2D" uid="uid://lnwp3h3jsssx" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 04.png" id="20_yx83s"]
 [ext_resource type="Texture2D" uid="uid://cepj0u3wmm0h1" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 05.png" id="21_c0b2e"]
+
+[sub_resource type="Animation" id="Animation_jy24e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_v1cat")]
+}
 
 [sub_resource type="Animation" id="Animation_l37p8"]
 resource_name = "fall"
@@ -135,6 +150,7 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jy0td"]
 _data = {
+"RESET": SubResource("Animation_jy24e"),
 "fall": SubResource("Animation_l37p8"),
 "ground": SubResource("Animation_vkytf"),
 "idle": SubResource("Animation_rg7bc"),
@@ -233,15 +249,16 @@ transitions = ["Start", "Without Sword", SubResource("AnimationNodeStateMachineT
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_80y31"]
 radius = 8.0
-height = 24.0
+height = 26.0
 
 [node name="Roger" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_yscsi")
 _jump_dust = ExtResource("2_0o1e0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2.08165e-12, -11.55)
-texture = ExtResource("3_6x316")
+texture = ExtResource("3_v1cat")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {
@@ -255,7 +272,7 @@ advance_expression_base_node = NodePath("../../..")
 anim_player = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -15)
+position = Vector2(0, -14)
 shape = SubResource("CapsuleShape2D_80y31")
 
 [connection signal="landed" from="." to="." method="_on_landed"]

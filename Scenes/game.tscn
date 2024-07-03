@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://caer8xjc2tgsh"]
+
+[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_klu6w"]
+[ext_resource type="Script" path="res://Scripts/camera.gd" id="2_0wjq4"]
+[ext_resource type="PackedScene" uid="uid://v6r3034osx6h" path="res://Scenes/background.tscn" id="3_kys72"]
+[ext_resource type="PackedScene" uid="uid://ddfnpefpciqr1" path="res://Scenes/Characters/roger2.tscn" id="4_n3eq2"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="5_ojfpc"]
+[ext_resource type="PackedScene" uid="uid://dnumndk6na2k5" path="res://Scenes/Levels/level_1-1.tscn" id="6_pymoc"]
+
+[node name="Game" type="Node2D"]
+position = Vector2(0, -1)
+script = ExtResource("1_klu6w")
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("_subject")]
+position = Vector2(312, -184)
+offset = Vector2(2.08165e-12, 2.08165e-12)
+zoom = Vector2(2.5, 2.5)
+script = ExtResource("2_0wjq4")
+_subject = NodePath("../Roger2")
+_offset = Vector2(2.5, 2.08165e-12)
+_look_ahead_trans_type = 1
+_look_ahead_ease_type = 2
+_look_ahead_duration = 2.0
+_floor_height_trans_type = 1
+_floor_height_ease_type = 1
+
+[node name="Background" parent="Camera2D" instance=ExtResource("3_kys72")]
+position = Vector2(-80, -2)
+
+[node name="Roger2" parent="." instance=ExtResource("4_n3eq2")]
+position = Vector2(-2, -17)
+
+[node name="Player" type="Node" parent="Roger2"]
+script = ExtResource("5_ojfpc")
+
+[node name="Level" parent="." instance=ExtResource("6_pymoc")]
+position = Vector2(-5, -2)
+
+[connection signal="changed_direction" from="Roger2" to="Camera2D" method="_on_subject_changed_direction"]
+[connection signal="landed" from="Roger2" to="Camera2D" method="_on_subject_landed"]

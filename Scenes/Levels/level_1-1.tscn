@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dnumndk6na2k5"]
+[gd_scene load_steps=24 format=3 uid="uid://dnumndk6na2k5"]
 
 [ext_resource type="Texture2D" uid="uid://dml5ei1qfj4gd" path="res://Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_3k3bg"]
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_x1hqa"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://bu0crmlktj8hf" path="res://Scenes/Characters/fierce_tooth.tscn" id="12_npqvf"]
 [ext_resource type="Script" path="res://Scripts/AI.gd" id="13_2m8if"]
 [ext_resource type="PackedScene" uid="uid://mcg6cruh6myq" path="res://Scenes/Characters/pink_star.tscn" id="14_x723h"]
+[ext_resource type="PackedScene" uid="uid://c44i7pb82vlp5" path="res://Scenes/Treasure/silver_coin.tscn" id="16_27apy"]
+[ext_resource type="PackedScene" uid="uid://d3cobraxwtscp" path="res://Scenes/Treasure/gold_coin.tscn" id="17_hg4ij"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4xrv8"]
 texture = ExtResource("1_3k3bg")
@@ -585,6 +587,8 @@ layer_1/tile_data = PackedInt32Array(1048603, 65537, 0, 1048604, 131073, 0, 1114
 [node name="Water" type="Area2D" parent="."]
 z_index = 10
 position = Vector2(-6, -2)
+collision_layer = 2
+collision_mask = 16843008
 script = ExtResource("3_tf72e")
 _splash = ExtResource("4_6057x")
 
@@ -753,6 +757,14 @@ _sprites_face_left = false
 position = Vector2(473, -135.5)
 shape = SubResource("RectangleShape2D_vyaq8")
 debug_color = Color(0, 0.6, 0.701961, 0.0823529)
+
+[node name="Treasure" type="Node2D" parent="."]
+
+[node name="Silver Coin" parent="Treasure" instance=ExtResource("16_27apy")]
+position = Vector2(132, -84.03)
+
+[node name="Gold Coin" parent="Treasure" instance=ExtResource("17_hg4ij")]
+position = Vector2(290, -117.03)
 
 [connection signal="body_entered" from="Water" to="Water" method="_on_body_entered"]
 [connection signal="body_exited" from="Water" to="Water" method="_on_body_exited"]

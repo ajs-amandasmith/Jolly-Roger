@@ -235,6 +235,8 @@ radius = 8.0
 height = 16.0
 
 [node name="Crabby" type="CharacterBody2D"]
+collision_layer = 65536
+collision_mask = 65793
 script = ExtResource("1_3dobw")
 _jump_dust = ExtResource("23_0uh6y")
 _sprites_face_left = true

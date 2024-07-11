@@ -4,6 +4,7 @@ extends Node2D
 @onready var _player_character : CharacterBody2D = $Roger2
 @onready var _level : Area2D = $Level
 
+# Called when the node enters the scene tree for the first time.
 func _ready():
 	# get the level boundaries from the level
 	var min_boundary : Vector2 = _level.get_min()
@@ -11,4 +12,3 @@ func _ready():
 	# and tell them to the camera and player character
 	_camera.set_bounds(min_boundary, max_boundary)
 	_player_character.set_bounds(min_boundary, max_boundary)
-	pass

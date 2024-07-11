@@ -11,6 +11,7 @@ func _on_body_entered(body):
 		return
 	# prevents player from hitting the same coin twice
 	collision_mask = 0
+	$/root/Game.collect_coin(_value)
 	_sprite.play("effect")
 	await _sprite.animation_finished
 	queue_free()

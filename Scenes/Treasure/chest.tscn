@@ -1,0 +1,181 @@
+[gd_scene load_steps=27 format=3 uid="uid://db56pyh260kkq"]
+
+[ext_resource type="Texture2D" uid="uid://bn4qbblpg4lj2" path="res://Treasure Hunters/Merchant Ship/Sprites/Chest/Unlocked/3.png" id="1_5qcpe"]
+[ext_resource type="Script" path="res://Scripts/Treasure/chest.gd" id="1_ua444"]
+[ext_resource type="PackedScene" uid="uid://c44i7pb82vlp5" path="res://Scenes/Treasure/silver_coin.tscn" id="2_dgmc1"]
+[ext_resource type="PackedScene" uid="uid://d3cobraxwtscp" path="res://Scenes/Treasure/gold_coin.tscn" id="3_7qs4j"]
+[ext_resource type="Texture2D" uid="uid://dahjur7qgxygn" path="res://Treasure Hunters/Merchant Ship/Sprites/Chest/Unlocked/8.png" id="3_vcj1p"]
+[ext_resource type="Texture2D" uid="uid://dpuupuij8ysr2" path="res://Treasure Hunters/Merchant Ship/Sprites/Chest/Unlocked/7.png" id="4_evc33"]
+[ext_resource type="Texture2D" uid="uid://c64hyxpbhl4v1" path="res://Treasure Hunters/Merchant Ship/Sprites/Chest/Unlocked/6.png" id="5_4lmbr"]
+[ext_resource type="Texture2D" uid="uid://c2ahp0yhnwaou" path="res://Treasure Hunters/Merchant Ship/Sprites/Chest/Unlocked/5.png" id="6_gawax"]
+[ext_resource type="Texture2D" uid="uid://7ey2evngm7lh" path="res://Treasure Hunters/Merchant Ship/Sprites/Chest/Unlocked/4.png" id="7_uu6vh"]
+
+[sub_resource type="Animation" id="Animation_2sdw3"]
+resource_name = "close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_vcj1p"), ExtResource("4_evc33"), ExtResource("5_4lmbr"), ExtResource("6_gawax"), ExtResource("7_uu6vh")]
+}
+
+[sub_resource type="Animation" id="Animation_0bh47"]
+resource_name = "closed_idle"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_5qcpe")]
+}
+
+[sub_resource type="Animation" id="Animation_4lycf"]
+resource_name = "open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("7_uu6vh"), ExtResource("6_gawax"), ExtResource("5_4lmbr"), ExtResource("4_evc33"), ExtResource("3_vcj1p")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"plunder"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_8vbvg"]
+resource_name = "open_idle"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_vcj1p")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_43tfo"]
+_data = {
+"close": SubResource("Animation_2sdw3"),
+"closed_idle": SubResource("Animation_0bh47"),
+"open": SubResource("Animation_4lycf"),
+"open_idle": SubResource("Animation_8vbvg")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_er31k"]
+animation = &"close"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_25ak4"]
+animation = &"closed_idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xdfwn"]
+animation = &"open"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ihkq0"]
+animation = &"open_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_c2ygy"]
+advance_mode = 2
+advance_expression = "_is_open"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1qh2t"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5qxiy"]
+advance_mode = 2
+advance_expression = "not _is_open"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_22ee1"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bhrh3"]
+advance_mode = 2
+advance_expression = "not _is_open"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_klik1"]
+advance_mode = 2
+advance_expression = "_is_open"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_efy8q"]
+states/Start/position = Vector2(156, 100)
+states/close/node = SubResource("AnimationNodeAnimation_er31k")
+states/close/position = Vector2(698, 100)
+states/closed_idle/node = SubResource("AnimationNodeAnimation_25ak4")
+states/closed_idle/position = Vector2(576, 175)
+states/open/node = SubResource("AnimationNodeAnimation_xdfwn")
+states/open/position = Vector2(474, 100)
+states/open_idle/node = SubResource("AnimationNodeAnimation_ihkq0")
+states/open_idle/position = Vector2(576, 15)
+transitions = ["closed_idle", "open", SubResource("AnimationNodeStateMachineTransition_c2ygy"), "open", "open_idle", SubResource("AnimationNodeStateMachineTransition_1qh2t"), "open_idle", "close", SubResource("AnimationNodeStateMachineTransition_5qxiy"), "close", "closed_idle", SubResource("AnimationNodeStateMachineTransition_22ee1"), "Start", "closed_idle", SubResource("AnimationNodeStateMachineTransition_bhrh3"), "Start", "open_idle", SubResource("AnimationNodeStateMachineTransition_klik1")]
+graph_offset = Vector2(-160, -76)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_483ru"]
+size = Vector2(30, 24)
+
+[node name="Chest" type="Area2D"]
+z_index = -1
+collision_layer = 16777216
+collision_mask = 256
+script = ExtResource("1_ua444")
+_total_value = 20
+_silver_coin = ExtResource("2_dgmc1")
+_gold_coin = ExtResource("3_7qs4j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -17)
+texture = ExtResource("3_vcj1p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_43tfo")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="Sprite2D/AnimationPlayer"]
+root_node = NodePath("../..")
+tree_root = SubResource("AnimationNodeStateMachine_efy8q")
+advance_expression_base_node = NodePath("../../..")
+anim_player = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_483ru")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

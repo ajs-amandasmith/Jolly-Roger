@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://caer8xjc2tgsh"]
+[gd_scene load_steps=21 format=3 uid="uid://caer8xjc2tgsh"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_klu6w"]
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="2_0wjq4"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://mi1no275iut1" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/33.png" id="16_2mega"]
 [ext_resource type="Texture2D" uid="uid://b858no8rhjlu3" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/34.png" id="17_w2jhi"]
 [ext_resource type="Texture2D" uid="uid://c83xffnxlxxwo" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/35.png" id="18_4vlv2"]
+[ext_resource type="Texture2D" uid="uid://b8kg2q36j7ruy" path="res://Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/01.png" id="20_mc7xy"]
 
 [node name="Game" type="Node2D"]
 position = Vector2(0, -1)
@@ -75,6 +76,35 @@ expand_mode = 5
 stretch_mode = 5
 
 [node name="Ones" type="TextureRect" parent="UserInterface/CoinCounter"]
+custom_minimum_size = Vector2(10, 2.08165e-12)
+layout_mode = 2
+texture = ExtResource("9_g5nci")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="LivesCounter" type="HBoxContainer" parent="UserInterface"]
+layout_direction = 3
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 132.0
+offset_bottom = 72.0
+scale = Vector2(2, 2)
+script = ExtResource("8_nedmr")
+_digits = Array[Texture2D]([ExtResource("9_g5nci"), ExtResource("10_fryam"), ExtResource("11_a34en"), ExtResource("12_vxqku"), ExtResource("13_gii4q"), ExtResource("14_dxa82"), ExtResource("15_lsr15"), ExtResource("16_2mega"), ExtResource("17_w2jhi"), ExtResource("18_4vlv2")])
+
+[node name="Icon" type="TextureRect" parent="UserInterface/LivesCounter"]
+layout_mode = 2
+texture = ExtResource("20_mc7xy")
+expand_mode = 3
+
+[node name="Ones" type="TextureRect" parent="UserInterface/LivesCounter"]
+custom_minimum_size = Vector2(10, 2.08165e-12)
+layout_mode = 2
+texture = ExtResource("9_g5nci")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Tens" type="TextureRect" parent="UserInterface/LivesCounter"]
 custom_minimum_size = Vector2(10, 2.08165e-12)
 layout_mode = 2
 texture = ExtResource("9_g5nci")
